@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">RobotSample</string>
+    <string name="sdk_info">SDK接入</string>
+    <string name="basic_scene">基础场景</string>
+    <string name="navigation">导航</string>
+    <string name="basic_sport">基础运动</string>
+    <string name="visual_ability">视觉能力</string>
+    <string name="speech_ability">语音</string>
+
+    <string name="start_lead_text">开始导航</string>
+    <string name="stop_lead_text">结束导航</string>
+    <string name="lead_text">引领</string>
+    <string name="map_location_text">地图及位置</string>
+    <string name="charge_text">充电</string>
+    <string name="lead_hint_point">接待点</string>
+    <string name="lead_tips_text">注意:引领前请先定位,并确保输入点在地图中存在</string>
+    <string name="back_text">返回</string>
+    <string name="clear_screen">清屏</string>
+    <string name="recovery_screen">恢复</string>
+    <string name="output_result">输出结果:</string>
+    <string name="speech_hint_text">播放文案/查询文案</string>
+
+    <string name="speech_play">播放</string>
+    <string name="speech_stop">停止</string>
+    <string name="speech_query">查询</string>
+    <string name="sport_forward">前进</string>
+    <string name="sport_back">后退</string>
+    <string name="sport_turn_left">左转</string>
+    <string name="sport_turn_right">右转</string>
+    <string name="sport_stop">停止</string>
+
+    <string name="vision_register">注册</string>
+    <string name="vision_un_register">取消注册</string>
+
+    <string name="location_reception">是否在接待点</string>
+    <string name="location_init_point">初始坐标点</string>
+    <string name="location_is_estimate">是否定位</string>
+    <string name="location_set_reception">设置接待点</string>
+    <string name="location_get_point">获取当前坐标</string>
+    <string name="location_remove_point">删除位置点</string>
+
+    <string name="navigation_stop">停止</string>
+    <string name="navigation_resume_direction">转向目标方向</string>
+
+    <string name="charge_auto_start">开始回充</string>
+    <string name="charge_auto_stop">结束回充</string>
+    <string name="charge_stop_leave">停止脱离充电桩</string>
+
+
+
+</resources>
