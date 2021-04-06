@@ -30,6 +30,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation files('libs/robotservice.jar')
+    implementation files('libs/robotservice_V1.1.1.jar')
     api 'com.google.code.gson:gson:2.7'
 }
