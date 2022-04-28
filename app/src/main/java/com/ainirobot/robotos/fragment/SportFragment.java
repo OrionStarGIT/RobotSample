@@ -35,6 +35,14 @@ public class SportFragment extends BaseFragment {
     private Button mGo_forward;
     private Button mTurn_right;
 
+
+    private Button mHead_up;
+    private Button mHead_down;
+    private Button mHead_left;
+    private Button mHead_right;
+
+    private static int reqId = 0;
+
     @Override
     public View onCreateView(Context context) {
         View root = mInflater.inflate(R.layout.fragment_sport_layout, null, false);
@@ -48,6 +56,10 @@ public class SportFragment extends BaseFragment {
         mStop_move = (Button) root.findViewById(R.id.stop_move);
         mTurn_left = (Button) root.findViewById(R.id.turn_left);
         mTurn_right = (Button) root.findViewById(R.id.turn_right);
+        mHead_up = (Button) root.findViewById(R.id.head_up);
+        mHead_down = (Button) root.findViewById(R.id.head_down);
+        mHead_left = (Button) root.findViewById(R.id.head_left);
+        mHead_right = (Button) root.findViewById(R.id.head_right);
 
         mGo_forward.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +93,31 @@ public class SportFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 RobotApi.getInstance().stopMove(0, mMotionListener);
+            }
+        });
+
+        mHead_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RobotApi.getInstance().moveHead(reqId++, "relative", "relative", 0, -10, mMotionListener);
+            }
+        });
+        mHead_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RobotApi.getInstance().moveHead(reqId++, "relative", "relative", 0, 10, mMotionListener);
+            }
+        });
+        mHead_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RobotApi.getInstance().moveHead(reqId++, "relative", "relative", -10, 0, mMotionListener);
+            }
+        });
+        mHead_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RobotApi.getInstance().moveHead(reqId++, "relative", "relative", 10, 0, mMotionListener);
             }
         });
     }

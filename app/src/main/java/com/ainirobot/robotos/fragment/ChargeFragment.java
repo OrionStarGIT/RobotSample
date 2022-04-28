@@ -26,14 +26,21 @@ import androidx.fragment.app.Fragment;
 import com.ainirobot.coreservice.client.Definition;
 import com.ainirobot.coreservice.client.RobotApi;
 import com.ainirobot.coreservice.client.listener.ActionListener;
+import com.ainirobot.coreservice.client.listener.CommandListener;
 import com.ainirobot.robotos.LogTools;
 import com.ainirobot.robotos.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class ChargeFragment extends BaseFragment {
 
+    private Button mDisable_auto_charge;
     private Button mStop_auto_charge;
     private Button mStart_auto_charge;
     private Button mStop_charge_leave;
+
+    private boolean autoChangeStatus;
 
     @Override
     public View onCreateView(Context context) {
@@ -43,6 +50,8 @@ public class ChargeFragment extends BaseFragment {
     }
 
     private void initViews(View root) {
+        autoChangeStatus = true;
+        mDisable_auto_charge = (Button) root.findViewById(R.id.disable_auto_charge);
         mStop_auto_charge = (Button) root.findViewById(R.id.stop_auto_charge);
         mStart_auto_charge = (Button) root.findViewById(R.id.start_auto_charge);
         mStop_charge_leave = (Button) root.findViewById(R.id.stop_charge_leave);
@@ -67,20 +76,41 @@ public class ChargeFragment extends BaseFragment {
                 stopChargingByApp();
             }
         });
+
+        mDisable_auto_charge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(autoChangeStatus) {
+                    RobotApi.getInstance().disableBattery();
+                    mDisable_auto_charge.setText(R.string.charge_enable);
+                    autoChangeStatus = false;
+                    LogTools.info("charge battery disabled");
+                }else{
+                    RobotApi.getInstance().enableBattery();
+                    mDisable_auto_charge.setText(R.string.charge_disable);
+                    autoChangeStatus = true;
+                    LogTools.info("charge battery enabled");
+                }
+            }
+        });
     }
 
     /**
+     * start auto charge
      * 开始自动回充
      */
     private void startCharge() {
+        LogTools.info("start auto charge");
         LogTools.info("开始自动回充");
         RobotApi.getInstance().startNaviToAutoChargeAction(0, 3 * Definition.MINUTE, mActionListener);
     }
 
     /**
+     * stop auto charge
      * 结束自动回充
      */
     private void stopAutoChargeAction() {
+        LogTools.info("stop auto charge");
         LogTools.info("结束自动回充");
         RobotApi.getInstance().stopAutoChargeAction(0, true);
     }
@@ -90,7 +120,13 @@ public class ChargeFragment extends BaseFragment {
      */
     private void stopChargingByApp() {
         LogTools.info("停止充电并脱离充电桩");
-        RobotApi.getInstance().stopChargingByApp();
+        //RobotApi.getInstance().stopChargingByApp();
+        RobotApi.getInstance().leaveChargingPile(0,0.5f,0.5f,new CommandListener() {
+            @Override
+            public void onResult(int result, String message) {
+                LogTools.info("result: " + result + " message: "+ message);
+            }
+        });
     }
 
     private ActionListener mActionListener = new ActionListener() {

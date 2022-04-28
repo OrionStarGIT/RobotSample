@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 日志打印工具
+ * LogTools
  *
  * @author Orion
  */

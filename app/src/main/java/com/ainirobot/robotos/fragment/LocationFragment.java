@@ -17,6 +17,8 @@
 package com.ainirobot.robotos.fragment;
 
 import android.content.Context;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -33,6 +35,7 @@ import org.json.JSONObject;
 
 public class LocationFragment extends BaseFragment {
 
+    private static final String TAG = "LocationFragment";
     private double mCurrentX;
     private double mCurrentY;
     private double mCurrentTheta;
@@ -43,6 +46,7 @@ public class LocationFragment extends BaseFragment {
     private Button mIs_in_location;
     private Button mRemove_location;
     private Button mSet_reception_point;
+    private Button mGetname;
 
     @Override
     public View onCreateView(Context context) {
@@ -58,6 +62,7 @@ public class LocationFragment extends BaseFragment {
         mIs_in_location = (Button) root.findViewById(R.id.is_in_location);
         mRemove_location = (Button) root.findViewById(R.id.remove_location);
         mSet_reception_point = (Button) root.findViewById(R.id.set_reception_point);
+        mGetname = (Button) root.findViewById(R.id.getname);
 
 
         mIs_in_location.setOnClickListener(new View.OnClickListener() {
@@ -101,10 +106,18 @@ public class LocationFragment extends BaseFragment {
                 removeLocation();
             }
         });
+
+        mGetname.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getName();
+            }
+        });
     }
 
 
     /**
+     * is robot in location
      * 判断机器人是否在位置点
      */
     private void isRobotInlocation() {
@@ -132,10 +145,12 @@ public class LocationFragment extends BaseFragment {
     }
 
     /**
+     * set robot in init estimate
      * 设置机器人初始坐标点
      */
     private void setPostEstimate() {
         if(mCurrentX == 0 || mCurrentY == 0){
+            LogTools.info("Estimate is empty, please set it before use");
             LogTools.info("坐标为空,请先获取当前坐标");
             return;
         }
@@ -157,8 +172,27 @@ public class LocationFragment extends BaseFragment {
             e.printStackTrace();
         }
     }
+    /**
+     * is robot
+     * 判断当前是否已定位
+     */
+
+    private void getName(){
+        RobotApi.getInstance().getMapName(0,new CommandListener(){
+            @Override
+            public void onResult(int result, String message, String extraData) {
+                super.onResult(result, message, extraData);
+                if (!TextUtils.isEmpty(message)) {
+                    String name = message;
+//                    LogTools.info(" name: ----" + name+"==="+message);
+                }
+            }
+        });
+    }
+
 
     /**
+     * is robot
      * 判断当前是否已定位
      */
     private void isRobotEstimate() {

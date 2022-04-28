@@ -1,50 +1,78 @@
 <resources>
     <string name="app_name">RobotSample</string>
-    <string name="sdk_info">SDK接入</string>
-    <string name="basic_scene">基础场景</string>
-    <string name="navigation">导航</string>
-    <string name="basic_sport">基础运动</string>
-    <string name="visual_ability">视觉能力</string>
-    <string name="speech_ability">语音</string>
+    <string name="sdk_info">SDK Sample</string>
+    <string name="basic_scene">Basic scene</string>
+    <string name="navigation">Navigation</string>
+    <string name="basic_sport">Basic Motion</string>
+    <string name="visual_ability">Visual ability</string>
+    <string name="speech_ability">Speech ability</string>
+    <string name="exit">Exit</string>
 
-    <string name="start_lead_text">开始导航</string>
-    <string name="stop_lead_text">结束导航</string>
-    <string name="lead_text">引领</string>
-    <string name="map_location_text">地图及位置</string>
-    <string name="charge_text">充电</string>
-    <string name="lead_hint_point">接待点</string>
-    <string name="lead_tips_text">注意:引领前请先定位,并确保输入点在地图中存在</string>
-    <string name="back_text">返回</string>
-    <string name="clear_screen">清屏</string>
-    <string name="recovery_screen">恢复</string>
-    <string name="output_result">输出结果:</string>
-    <string name="speech_hint_text">播放文案/查询文案</string>
+    <string name="start_lead_text">Start navigation</string>
+    <string name="stop_lead_text">End navigation</string>
+    <string name="lead_text">Lead</string>
+    <string name="map_location_text">Map/Position</string>
+    <string name="charge_text">Charge</string>
+    <string name="lead_hint_point">Reception point</string>
+    <string name="lead_tips_text">Notice:Before Lead,Make sure the location exist</string>
+    <string name="back_text">Back</string>
+    <string name="clear_screen">Clear</string>
+    <string name="recovery_screen">RCVY</string>
+    <string name="output_result">Result:</string>
+    <string name="speech_hint_text">Play text/Query text</string>
 
-    <string name="speech_play">播放</string>
-    <string name="speech_stop">停止</string>
-    <string name="speech_query">查询</string>
-    <string name="sport_forward">前进</string>
-    <string name="sport_back">后退</string>
-    <string name="sport_turn_left">左转</string>
-    <string name="sport_turn_right">右转</string>
-    <string name="sport_stop">停止</string>
+    <string name="speech_play">Play</string>
+    <string name="speech_stop">Stop</string>
+    <string name="speech_query">Query</string>
+    <string name="sport_forward">Forward</string>
+    <string name="sport_back">Back</string>
+    <string name="sport_turn_left">Left</string>
+    <string name="sport_turn_right">Right</string>
+    <string name="sport_turn_up">Up</string>
+    <string name="sport_turn_down">Down</string>
+    <string name="sport_stop">Stop</string>
+    <string name="sport_head">Head</string>
+    <string name="sport_body">Body</string>
 
-    <string name="vision_register">注册</string>
-    <string name="vision_un_register">取消注册</string>
+    <string name="vision_register">Register</string>
+    <string name="vision_find">Find Face</string>
+    <string name="vision_un_register">Unregister</string>
+    <string name="vision_warning">Warning: startRegister is a server API, Do not register the same people many times, No api to delete person at the moment. If there is no need, do not call startRegister. </string>
+    <string name="vision_warning2">No api to delete person at the moment</string>
 
-    <string name="location_reception">是否在接待点</string>
-    <string name="location_init_point">初始坐标点</string>
-    <string name="location_is_estimate">是否定位</string>
-    <string name="location_set_reception">设置接待点</string>
-    <string name="location_get_point">获取当前坐标</string>
-    <string name="location_remove_point">删除位置点</string>
+    <string name="location_reception">Is in reception point?</string>
+    <string name="location_init_point">Init Position</string>
+    <string name="location_is_estimate">Is estimate</string>
+    <string name="location_set_reception">Set reception point</string>
+    <string name="location_get_point">Get Point</string>
+    <string name="location_remove_point">Del Point</string>
+    <string name="getname">getname</string>
 
-    <string name="navigation_stop">停止</string>
-    <string name="navigation_resume_direction">转向目标方向</string>
+    <string name="navigation_stop">Stop</string>
+    <string name="navigation_resume_direction">Resume Direction</string>
 
-    <string name="charge_auto_start">开始回充</string>
-    <string name="charge_auto_stop">结束回充</string>
-    <string name="charge_stop_leave">停止脱离充电桩</string>
+
+    <string name="charge_disable">Disable Auto-Charge</string>
+    <string name="charge_enable">Enable Auto-Charge</string>
+    <string name="charge_auto_start">Start Charge</string>
+    <string name="charge_auto_stop">Stop Charge</string>
+    <string name="charge_stop_leave">Stop Leaving Charge Dock</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="positioning_spot">Positioning Point</string>
+    <string name="charging_point">Charging Point</string>
+    <string name="charging_pole">Charging Pole</string>
+    <string name="get_place_fail">R.string.get_place_fail</string>
+    <string name="stand_by_spot">Stand-by Point</string>
+    <string name="reception_point">Reception Point</string>
+    <string name="do_not_move_robot">Please don\'t move the robot</string>
+    <string name="starting_progress">Creating Map, Please Wait…</string>
+    <string name="go_navigation">Go Navigation?</string>
+    <string name="sure_go_navigation">Are you sure to navigation %s?</string>
+    <string name="cancel_txt">Cancel</string>
+    <string name="confirm_txt">Confirm</string>
+    <string name="forbid_line_explain">\"No-go line has been added\" or \"No need to add\". Please tap \"Save\".</string>
+
 
 
 

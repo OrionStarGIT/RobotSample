@@ -65,4 +65,19 @@
             android:layout_marginLeft="8dp"
             android:text="@string/location_remove_point" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/getname"
+            style="@style/TextStyle"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:text="@string/getname" />
+    </LinearLayout>
 </LinearLayout>

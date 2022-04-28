@@ -84,6 +84,7 @@ public class NavigationFragment extends BaseFragment {
     }
 
     /**
+     * startNavigation
      * 导航到指定位置
      */
     private void startNavigation() {
@@ -91,6 +92,7 @@ public class NavigationFragment extends BaseFragment {
     }
 
     /**
+     * stopNavigation
      * 停止导航到指定位置
      */
     private void stopNavigation() {
@@ -98,15 +100,19 @@ public class NavigationFragment extends BaseFragment {
     }
 
     /**
+     * turn to target point direction
      * 转向目标点方向
+     * Notice: this function only make robot target the point, but do not move
      * 方法说明：该接口只会左右转动到目标点方位，不会实际运动到目标点。
      */
     private void resumeSpecialPlaceTheta() {
         String navigationPoint = getNavigationPoint();
         if(TextUtils.isEmpty(navigationPoint)){
+            LogTools.info("Point not exist: " + navigationPoint);
             LogTools.info("转向点不存在: " + navigationPoint);
             return;
         }else{
+            LogTools.info("Target point: " + navigationPoint);
             LogTools.info("转向点: " + navigationPoint);
         }
         RobotApi.getInstance().resumeSpecialPlaceTheta(0,navigationPoint, new CommandListener() {
@@ -138,8 +144,10 @@ public class NavigationFragment extends BaseFragment {
             switch (status) {
                 case Definition.RESULT_OK:
                     if ("true".equals(response)) {
+                        LogTools.info("startNavigation result: " + status +"(Navigation success)"+ " message: "+  response);
                         LogTools.info("startNavigation result: " + status +"(导航成功)"+ " message: "+  response);
                     } else {
+                        LogTools.info("startNavigation result: " + status +"(Navigation failed)"+ " message: "+  response);
                         LogTools.info("startNavigation result: " + status +"(导航失败)"+ " message: "+  response);
                     }
                     break;
@@ -152,21 +160,27 @@ public class NavigationFragment extends BaseFragment {
         public void onError(int errorCode, String errorString) throws RemoteException {
             switch (errorCode) {
                 case Definition.ERROR_NOT_ESTIMATE:
+                    LogTools.info("onError result: " + errorCode +"(not estimate)"+ " message: "+  errorString);
                     LogTools.info("onError result: " + errorCode +"(当前未定位)"+ " message: "+  errorString);
                     break;
                 case Definition.ERROR_IN_DESTINATION:
+                    LogTools.info("onError result: " + errorCode +"(in destination, no action)"+ " message: "+  errorString);
                     LogTools.info("onError result: " + errorCode +"(当前机器人已经在目的地范围内)"+ " message: "+  errorString);
                     break;
                 case Definition.ERROR_DESTINATION_NOT_EXIST:
+                    LogTools.info("onError result: " + errorCode +"(destination not exist)"+ " message: "+  errorString);
                     LogTools.info("onError result: " + errorCode +"(导航目的地不存在)"+ " message: "+  errorString);
                     break;
                 case Definition.ERROR_DESTINATION_CAN_NOT_ARRAIVE:
+                    LogTools.info("onError result: " + errorCode +"(avoid timeout, can not arrive)"+ " message: "+  errorString);
                     LogTools.info("onError result: " + errorCode +"(避障超时，目的地不能到达，超时时间通过参数设置)"+ " message: "+  errorString);
                     break;
                 case Definition.ACTION_RESPONSE_ALREADY_RUN:
+                    LogTools.info("onError result: " + errorCode +"(already started, please stop first)"+ " message: "+  errorString);
                     LogTools.info("onError result: " + errorCode +"(当前接口已经调用，请先停止，才能再次调用)"+ " message: "+  errorString);
                     break;
                 case Definition.ACTION_RESPONSE_REQUEST_RES_ERROR:
+                    LogTools.info("onError result: " + errorCode +"(wheels are busy for other actions, please stop first)"+ " message: "+  errorString);
                     LogTools.info("onError result: " + errorCode +"(已经有需要控制底盘的接口调用，请先停止，才能继续调用)"+ " message: "+  errorString);
                     break;
                 default:
@@ -178,9 +192,11 @@ public class NavigationFragment extends BaseFragment {
         public void onStatusUpdate(int status, String data) throws RemoteException {
             switch (status) {
                 case Definition.STATUS_NAVI_AVOID:
+                    LogTools.info("onStatusUpdate result: " + status +"(can not avoid obstacles)"+ " message: "+  data);
                     LogTools.info("onStatusUpdate result: " + status +"(当前路线已经被障碍物堵死)"+ " message: "+  data);
                     break;
                 case Definition.STATUS_NAVI_AVOID_END:
+                    LogTools.info("onStatusUpdate result: " + status +"(Obstacle removed)"+ " message: "+  data);
                     LogTools.info("onStatusUpdate result: " + status +"(障碍物已移除)"+ " message: "+  data);
                     break;
                 default:

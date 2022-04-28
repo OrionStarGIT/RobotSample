@@ -27,12 +27,13 @@ public class ModuleCallback extends ModuleCallbackApi {
     private static final String TAG = ModuleCallback.class.getName();
 
     /**
+     * Receive speech request
      * 接收语音指令 底层发起request 请求
      *
      * @param reqId
-     * @param reqType 语音指令类型
-     * @param reqText 语音识别内容
-     * @param reqParam 语音指令参数
+     * @param reqType 语音指令类型, Speech type
+     * @param reqText 语音识别内容, Speech text
+     * @param reqParam 语音指令参数, Speech param
      * @throws RemoteException
      */
     @Override
@@ -44,6 +45,7 @@ public class ModuleCallback extends ModuleCallbackApi {
     }
 
     /**
+     * hardware error callback
      * 硬件出现异常回调
      * @param function
      * @param type
@@ -57,6 +59,7 @@ public class ModuleCallback extends ModuleCallbackApi {
     }
 
     /**
+     * Suspend system, after this message, RobotOS can not work with this APP
      * 控制权被系统剥夺，收到该事件后，所有Api调用无效
      * @throws RemoteException
      */
@@ -67,6 +70,7 @@ public class ModuleCallback extends ModuleCallbackApi {
     }
 
     /**
+     * Recovery system, after this message, RobotOS can work with this APP again.
      * 控制权恢复，收到该事件后，重新恢复对机器人的控制
      * @throws RemoteException
      */

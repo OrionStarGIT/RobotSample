@@ -6,7 +6,15 @@
     android:orientation="horizontal">
 
     <Button
+        android:id="@+id/disable_auto_charge"
+        style="@style/TextStyle"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:text="@string/charge_disable" />
+
+    <Button
         android:id="@+id/start_auto_charge"
+        android:layout_marginLeft="8dp"
         style="@style/TextStyle"
         android:layout_width="100dp"
         android:layout_height="48dp"

@@ -1,70 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:layout_marginBottom="10dp"
+    android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/lead_scene"
-        android:layout_width="120dp"
-        android:layout_marginTop="40dp"
-        android:layout_height="42dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/lead_text"
-        android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/speech_scene"
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/speech_ability"
-        android:textColor="#FFFFFF" />
+    <LinearLayout
+        android:layout_width="560dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/sport_scene"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/basic_sport"
+            android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/sport_scene"
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/basic_sport"
-        android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/vision_scene"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/visual_ability"
+            android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/vision_scene"
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/visual_ability"
-        android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/location_scene"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/map_location_text"
+            android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/location_scene"
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/map_location_text"
-        android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/navigation_scene"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/navigation"
+            android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/navigation_scene"
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/navigation"
-        android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/charge_scene"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/charge_text"
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/lead_scene"
+            android:layout_width="120dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="@string/lead_text"
+            android:visibility="gone"
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/speech_scene"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/speech_ability"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/charge_scene"
-        android:layout_width="120dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/charge_text"
-        android:textColor="#FFFFFF" />
-</LinearLayout>
+        <Button
+            android:layout_gravity="right|bottom"
+            android:id="@+id/exit"
+            android:layout_width="60dp"
+            android:layout_height="42dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorExit"
+            android:text="@string/exit"
+            android:textColor="#FFFFFF" />
+</FrameLayout>

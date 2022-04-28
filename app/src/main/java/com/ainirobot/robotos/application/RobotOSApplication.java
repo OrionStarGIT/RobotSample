@@ -66,7 +66,10 @@ public class RobotOSApplication extends Application {
             }
 
             /**
+             * Server connected, set callback to handle message
              * Server已连接，设置接收请求的回调，包含语音指令、系统事件等
+             *
+             * Start connect RobotOS, init and make it ready to use
              * 启动与RobotOS连接，这里可以做一些初始化的工作 例如连接语音,本地服务等
              */
             @Override
@@ -77,6 +80,7 @@ public class RobotOSApplication extends Application {
             }
 
             /**
+             * Disconnect RobotOS
              * 连接已断开
              */
             @Override
@@ -100,6 +104,7 @@ public class RobotOSApplication extends Application {
             }
 
             /**
+             * Handle speech service
              * 语音服务连接成功，注册语音回调
              */
             @Override
@@ -108,6 +113,7 @@ public class RobotOSApplication extends Application {
             }
 
             /**
+             * Disconnect speech service
              * 语音服务已断开
              */
             @Override
