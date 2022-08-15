@@ -30,15 +30,12 @@ import com.ainirobot.coreservice.client.listener.CommandListener;
 import com.ainirobot.robotos.LogTools;
 import com.ainirobot.robotos.R;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 public class ChargeFragment extends BaseFragment {
 
     private Button mDisable_auto_charge;
     private Button mStop_auto_charge;
     private Button mStart_auto_charge;
-    private Button mStop_charge_leave;
+    private Button mCharge_leave;
 
     private boolean autoChangeStatus;
 
@@ -54,7 +51,7 @@ public class ChargeFragment extends BaseFragment {
         mDisable_auto_charge = (Button) root.findViewById(R.id.disable_auto_charge);
         mStop_auto_charge = (Button) root.findViewById(R.id.stop_auto_charge);
         mStart_auto_charge = (Button) root.findViewById(R.id.start_auto_charge);
-        mStop_charge_leave = (Button) root.findViewById(R.id.stop_charge_leave);
+        mCharge_leave = (Button) root.findViewById(R.id.charge_leave);
 
         mStart_auto_charge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +67,7 @@ public class ChargeFragment extends BaseFragment {
             }
         });
 
-        mStop_charge_leave.setOnClickListener(new View.OnClickListener() {
+        mCharge_leave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 stopChargingByApp();

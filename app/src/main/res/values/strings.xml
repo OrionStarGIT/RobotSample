@@ -39,6 +39,8 @@
     <string name="vision_un_register">Unregister</string>
     <string name="vision_warning">Warning: startRegister is a server API, Do not register the same people many times, No api to delete person at the moment. If there is no need, do not call startRegister. </string>
     <string name="vision_warning2">No api to delete person at the moment</string>
+    <string name="charge_desc">If you want to \"Leaving Charge Dock\", you have to \"disable auto-charge\" before robot start charge</string>
+
 
     <string name="location_reception">Is in reception point?</string>
     <string name="location_init_point">Init Position</string>
@@ -54,9 +56,9 @@
 
     <string name="charge_disable">Disable Auto-Charge</string>
     <string name="charge_enable">Enable Auto-Charge</string>
-    <string name="charge_auto_start">Start Charge</string>
-    <string name="charge_auto_stop">Stop Charge</string>
-    <string name="charge_stop_leave">Stop Leaving Charge Dock</string>
+    <string name="charge_auto_start">Go Charge</string>
+    <string name="charge_auto_stop">Stop go charge</string>
+    <string name="charge_stop_leave">Leaving Charge Dock</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="positioning_spot">Positioning Point</string>

@@ -17,6 +17,7 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:text="@string/sport_forward" />
 
@@ -25,6 +26,7 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:text="@string/sport_back" />
 
@@ -33,6 +35,7 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:text="@string/sport_turn_left" />
         <Button
@@ -40,6 +43,7 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:text="@string/sport_turn_right" />
         <Button
@@ -47,7 +51,9 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:text="@string/sport_stop" />
     </LinearLayout>
     <TextView
@@ -65,6 +71,7 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:text="@string/sport_turn_up" />
         <Button
@@ -72,6 +79,7 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:text="@string/sport_turn_down" />
         <Button
@@ -79,6 +87,7 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:text="@string/sport_turn_left" />
         <Button
@@ -86,7 +95,9 @@
             style="@style/TextStyle"
             android:layout_width="60dp"
             android:layout_height="48dp"
+            android:layout_weight="1"
             android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:text="@string/sport_turn_right" />
 
 

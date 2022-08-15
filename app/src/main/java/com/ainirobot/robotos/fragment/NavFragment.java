@@ -29,6 +29,7 @@ import com.ainirobot.robotos.maputils.DialogConfirm;
 import com.ainirobot.robotos.maputils.DialogUtils;
 import com.ainirobot.robotos.maputils.GlobalData;
 import com.ainirobot.robotos.maputils.GsonUtil;
+import com.ainirobot.robotos.view.BackView;
 import com.ainirobot.robotos.view.MapView;
 import com.ainirobot.robotos.maputils.MapppUtils;
 import com.ainirobot.robotos.maputils.Pose2d;
@@ -52,7 +53,7 @@ public class NavFragment extends Fragment {
     private final static String MAP_PGM = "pgm.zip";
     public static boolean isCreatingMap = false;
     private static final String TAG = "NavFragment";
-    private TextView mBackView;
+    private BackView mBackView;
     private boolean mIsEstimate;
     private RoverMap mRoverMap;
     private String placeName1;
