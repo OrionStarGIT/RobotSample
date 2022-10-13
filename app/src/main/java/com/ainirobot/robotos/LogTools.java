@@ -64,7 +64,7 @@ public class LogTools {
     }
 
     public static void clearHistory() {
-        mBuilder.delete(0, mBuilder.length());
+        mBuilder = new StringBuilder();
     }
 
     public static String getHistoryText(){

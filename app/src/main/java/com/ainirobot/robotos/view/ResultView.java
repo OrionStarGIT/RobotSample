@@ -66,6 +66,7 @@ public class ResultView extends LinearLayout {
         mClear_result.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                LogTools.clearHistory();
                 mTv_result.setText("");
             }
         });
