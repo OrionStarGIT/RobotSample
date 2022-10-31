@@ -27,6 +27,7 @@ import com.ainirobot.coreservice.client.Definition;
 import com.ainirobot.coreservice.client.RobotApi;
 import com.ainirobot.coreservice.client.listener.ActionListener;
 import com.ainirobot.coreservice.client.listener.CommandListener;
+import com.ainirobot.coreservice.client.robotsetting.RobotSettingApi;
 import com.ainirobot.robotos.LogTools;
 import com.ainirobot.robotos.R;
 
@@ -43,6 +44,8 @@ public class ChargeFragment extends BaseFragment {
     public View onCreateView(Context context) {
         View root = mInflater.inflate(R.layout.fragment_charge_layout, null, false);
         initViews(root);
+        LogTools.info("Battery level:"+
+                RobotSettingApi.getInstance().getRobotString(Definition.ROBOT_SETTINGS_BATTERY_INFO)+"%");
         return root;
     }
 
