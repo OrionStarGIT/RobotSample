@@ -42,7 +42,7 @@ public class SpeechCallback extends SkillCallback {
 
     @Override
     public void onVolumeChange(int i) throws RemoteException {
-        LogTools.info(TAG+" onVolumeChange :" + i);
+        //LogTools.info(TAG+" onVolumeChange :" + i);
     }
 
     @Override
