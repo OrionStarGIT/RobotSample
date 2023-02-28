@@ -111,14 +111,22 @@ public class NavFragment extends Fragment {
      * The map has current robot position information, direction coordinates and clickable navigation positions
      * */
     private void getMap(final String name) {
-        String mapPath = ROBOT_MAP_DIR + File.separator + name + File.separator + MAP_PGM;
-        mRoverMap = MapppUtils.loadMap(mapPath);
+        String pgmPathNew = ROBOT_MAP_DIR + File.separator + name + File.separator + "navi_data" + File.separator + "map.pgm";
+        mRoverMap = MapppUtils.loadMapNew(pgmPathNew);
         if (mRoverMap != null) {
             mMapView.setBitmap(mRoverMap.bitmap);
             Log.d(TAG, "mRoverMap.res: " + mRoverMap.res);
             mMapView.setResolution(mRoverMap.res);
         } else {
-            Log.d(TAG, "parse map fail");
+            String mapPath = ROBOT_MAP_DIR + File.separator + name + File.separator + MAP_PGM;
+            mRoverMap = MapppUtils.loadMap(mapPath);
+            if (mRoverMap != null) {
+                mMapView.setBitmap(mRoverMap.bitmap);
+                Log.d(TAG, "mRoverMap.res: " + mRoverMap.res);
+                mMapView.setResolution(mRoverMap.res);
+            } else {
+                Log.d(TAG, "parse map fail");
+            }
         }
         GlobalData.getInstance().setEditMapData(mMapView, mRoverMap);
 

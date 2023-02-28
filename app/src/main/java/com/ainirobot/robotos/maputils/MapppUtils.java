@@ -67,6 +67,81 @@ public class MapppUtils {
         return newPose;
     }
 
+    /*
+    * 适用于新的地图结构，读取pgm文件
+    *
+    * */
+    public static RoverMap loadMapNew(String pgmPath){
+        FileInputStream fileInputStream = null;
+        DataInputStream dataInputStream = null;
+        try {
+
+
+            RoverMap roverMap = new RoverMap();
+            fileInputStream = new FileInputStream(pgmPath);
+            dataInputStream = new DataInputStream(fileInputStream);
+
+            String magic = nextNonCommentLine(dataInputStream);
+            Log.d("PgmBitMap", magic);
+            if (!magic.equals("P5")) {
+                throw new Exception("Unknown magic number: " + magic);
+            }
+
+            String widthHeight = nextNonCommentLine(dataInputStream);
+            String[] tokens = widthHeight.split(" ");
+            int width = Integer.parseInt(tokens[0]);
+            int height = Integer.parseInt(tokens[1]);
+            int size = width * height;
+
+            nextNonCommentLine(dataInputStream);
+            /*String sMaxVal = nextNonCommentLine(dataInputStream);
+            int maxVal = Integer.parseInt(sMaxVal);*/
+
+            byte[] pixelsByte = new byte[size];
+            dataInputStream.read(pixelsByte, 0, size);
+            roverMap.extra = new byte[16];
+            dataInputStream.read(roverMap.extra, 0, 16);
+
+            int[] pixelsInt = new int[size];
+            for (int i = 0; i < size; i++) {
+                int p = pixelsByte[i] & 0xff;
+                switch (p) {
+                    case 0x96:
+                        pixelsInt[i] = UNDETECT;//灰色---白色
+                        break;
+                    case 0x00:
+                        pixelsInt[i] = BLOCK;//黑色---深蓝
+                        break;
+                    case 0xff:
+                        pixelsInt[i] = PASS;//白色---浅蓝
+                        break;
+                    case 0x05:
+                        pixelsInt[i] = OBSTACLE;
+                        break;
+                    default:
+                        break;
+                }
+                //pixelsInt[i] = 0xff000000 | (p << 16) | (p << 8) | p;
+            }
+
+            roverMap.x = byte2float(roverMap.extra, 8);
+            roverMap.y = byte2float(roverMap.extra, 12);
+            roverMap.res = bytes2Double(roverMap.extra, 0);
+            roverMap.height = height;
+            roverMap.width = width;
+
+            roverMap.bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            roverMap.bitmap.setPixels(pixelsInt, 0, width, 0, 0, width, height);
+            return roverMap;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            IOUtils.close(dataInputStream);
+            IOUtils.close(fileInputStream);
+        }
+        return null;
+    }
+
     public static RoverMap loadMap(String path) {
         File zipFile = new File(path);
         String pgmPath = zipFile.getParent() + File.separator + MAP_PGM_NAME;
