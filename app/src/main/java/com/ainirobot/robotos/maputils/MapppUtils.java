@@ -69,7 +69,7 @@ public class MapppUtils {
 
     /*
     * 适用于新的地图结构，读取pgm文件
-    *
+    * For new pgm map structure.
     * */
     public static RoverMap loadMapNew(String pgmPath){
         FileInputStream fileInputStream = null;
@@ -141,7 +141,10 @@ public class MapppUtils {
         }
         return null;
     }
-
+    /*
+     * 适用于老的地图结构，读取pgm文件
+     * For old pgm map structure.
+     * */
     public static RoverMap loadMap(String path) {
         File zipFile = new File(path);
         String pgmPath = zipFile.getParent() + File.separator + MAP_PGM_NAME;
