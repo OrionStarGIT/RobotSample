@@ -10,18 +10,20 @@
 
         <Button
             android:id="@+id/register_btn"
-            style="@style/TextStyle"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginLeft="15dp"
+            android:enabled="false"
             android:text="@string/vision_register" />
 
         <Button
             android:id="@+id/find_people_btn"
-            style="@style/TextStyle"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_marginLeft="15dp"
+            android:enabled="false"
             android:text="@string/vision_find" />
     </LinearLayout>
     <TextView

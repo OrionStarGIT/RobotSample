@@ -37,7 +37,7 @@
     <string name="vision_register">Register</string>
     <string name="vision_find">Find Face</string>
     <string name="vision_un_register">Unregister</string>
-    <string name="vision_warning">Warning: startRegister is a server API, Do not register the same people many times, No api to delete person at the moment. If there is no need, do not call startRegister. </string>
+    <string name="vision_warning">Warning:Due to legal restrictions, the registration API is not developed in regions other than China. You may need Google or MS related services to implement the face registration function </string>
     <string name="vision_warning2">No api to delete person at the moment</string>
     <string name="charge_desc">If you want to \"Leaving Charge Dock\", you have to \"disable auto-charge\" before robot start charge</string>
     <string name="connect_failed">Your sdk init failed<br/><br/> Make sure launch this app from Home Launcher!<br/><br/> 你的SDK初始化失败了<br/>请确保从应用中心启动此程序。</string>
