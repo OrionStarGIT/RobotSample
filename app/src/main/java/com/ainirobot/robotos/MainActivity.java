@@ -66,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment = FailedFragment.newInstance();
             switchFragment(fragment);
         }
-        else if(RobotApi.getInstance().isApiConnectedService()){
+        else if(RobotApi.getInstance().isApiConnectedService()
+                && RobotApi.getInstance().isActive()){
             Fragment fragment = MainFragment.newInstance();
             switchFragment(fragment);
         }else

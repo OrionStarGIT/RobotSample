@@ -200,7 +200,6 @@ public class MapView extends View {
     }
 
     public void setOrigin(Pose2d origin) {
-        Log.d(TAG, "setOrigin");
         mOrigin = origin;
         invalidate();
     }
