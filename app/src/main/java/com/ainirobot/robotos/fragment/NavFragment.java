@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
+import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
@@ -19,6 +20,7 @@ import com.ainirobot.coreservice.client.Definition;
 import com.ainirobot.coreservice.client.RobotApi;
 import com.ainirobot.coreservice.client.StatusListener;
 import com.ainirobot.coreservice.client.actionbean.PlaceBean;
+import com.ainirobot.coreservice.client.ashmem.ShareMemoryApi;
 import com.ainirobot.coreservice.client.listener.ActionListener;
 import com.ainirobot.coreservice.client.listener.CommandListener;
 import com.ainirobot.robotos.LogTools;
@@ -42,6 +44,8 @@ import com.google.gson.reflect.TypeToken;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,8 +115,14 @@ public class NavFragment extends Fragment {
      * The map has current robot position information, direction coordinates and clickable navigation positions
      * */
     private void getMap(final String name) {
-        String pgmPathNew = ROBOT_MAP_DIR + File.separator + name + File.separator + "navi_data" + File.separator + "map.pgm";
-        mRoverMap = MapppUtils.loadMapNew(pgmPathNew);
+        Log.d(TAG, "getMapPgmPFD: mapName=" + name);
+        //获取 map.pgm 文件描述符
+        ParcelFileDescriptor mapPgmPFD = ShareMemoryApi.getInstance().getMapPgmPFD(name);
+        FileDescriptor fd = mapPgmPFD.getFileDescriptor();
+        FileInputStream fileInputStream = new FileInputStream(fd);
+        //从文件描述符读取数据流，解析为 RoverMap（此逻辑和之前一致）
+        mRoverMap = MapppUtils.loadPFD2RoverMap(fileInputStream);
+
         if (mRoverMap != null) {
             mMapView.setBitmap(mRoverMap.bitmap);
             Log.d(TAG, "mRoverMap.res: " + mRoverMap.res);
@@ -251,6 +261,8 @@ public class NavFragment extends Fragment {
         super.onStop();
         RobotApi.getInstance().unregisterStatusListener(mStatusPoseListener);
         RobotApi.getInstance().unregisterStatusListener(mEstimateStateListen);
+        //释放 service 层资源
+        ShareMemoryApi.getInstance().releaseGetMapPgmPFD();
     }
 
     private StatusListener mStatusPoseListener = new StatusListener() {

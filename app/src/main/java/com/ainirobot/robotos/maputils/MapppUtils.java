@@ -8,10 +8,14 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.ainirobot.base.analytics.utils.Md5Util;
+import com.ainirobot.coreservice.client.Definition;
 
+import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,6 +32,7 @@ public class MapppUtils {
     public final static int UNDETECT = 0xFF182A52;
     public final static int OBSTACLE = 0xFF1D3C7E;
     private final static String MAP_PGM_NAME = "map.pgm";
+    private static final String TAG = "MapppUtils";
 
     /**
      * 将bitmap转换为本地的图片
@@ -364,6 +369,135 @@ public class MapppUtils {
             value |= ((long) (arr[i] & 0xff)) << (8 * (i - index));
         }
         return Double.longBitsToDouble(value);
+    }
+
+    /**
+     * 解析 共享内存数据流为 RoverMap
+     */
+    public static RoverMap loadPFD2RoverMap(FileInputStream fileInputStream) {
+        Log.d(TAG, "loadPFD2RoverMap:");
+        DataInputStream dataInputStream = null;
+        try {
+            Log.d(TAG, "loadPFD2RoverMap: available=" + fileInputStream.available());
+            RoverMap roverMap = new RoverMap();
+            dataInputStream = new DataInputStream(fileInputStream);
+            Log.d(TAG, "loadPFD2RoverMap: available=" + dataInputStream.available());
+
+            String magic = nextNonCommentLine(dataInputStream);
+            Log.d(TAG, "loadPFD2RoverMap: magic=" + magic);
+            if (!magic.equals("P5")) {
+                throw new Exception("Unknown magic number: " + magic);
+            }
+
+            String widthHeight = nextNonCommentLine(dataInputStream);
+            String[] tokens = widthHeight.split(" ");
+            int width = Integer.parseInt(tokens[0]);
+            int height = Integer.parseInt(tokens[1]);
+            int size = width * height;
+
+            nextNonCommentLine(dataInputStream);
+
+            byte[] pixelsByte = new byte[size];
+            dataInputStream.read(pixelsByte, 0, size);
+            roverMap.extra = new byte[16];
+            dataInputStream.read(roverMap.extra, 0, 16);
+
+            int[] pixelsInt = new int[size];
+            for (int i = 0; i < size; i++) {
+                int p = pixelsByte[i] & 0xff;
+                switch (p) {
+                    case 0x96:
+                        pixelsInt[i] = Definition.MAPCOLOR.UNDETECT;//未探测
+                        break;
+                    case 0x00:
+                        pixelsInt[i] = Definition.MAPCOLOR.BLOCK;//禁行线
+                        break;
+                    case 0xff:
+                        pixelsInt[i] = Definition.MAPCOLOR.PASS;//可通行
+                        break;
+                    case 0x05:
+                        pixelsInt[i] = Definition.MAPCOLOR.OBSTACLE;//障碍物
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            roverMap.x = byte2float(roverMap.extra, 8);
+            roverMap.y = byte2float(roverMap.extra, 12);
+            roverMap.res = bytes2Double(roverMap.extra, 0);
+            roverMap.height = height;
+            roverMap.width = width;
+
+            roverMap.bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            roverMap.bitmap.setPixels(pixelsInt, 0, width, 0, 0, width, height);
+            Log.d(TAG, "loadPFD2RoverMap: Done!");
+            return roverMap;
+        } catch (Exception e) {
+            Log.d(TAG, "loadPFD2RoverMap:Exception: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            IOUtils.close(dataInputStream);
+            IOUtils.close(fileInputStream);
+        }
+        return null;
+    }
+
+    /**
+     * 把 RoverMap 转化成共享内存数据
+     */
+    public static byte[] saveRoverMapToPFDData(RoverMap map) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        DataOutputStream dataOutputStream = null;
+        try {
+            dataOutputStream = new DataOutputStream(outputStream);
+
+            String fileHeader = String.format("P5\n%d %d\n255\n", map.bitmap.getWidth(), map
+                    .bitmap.getHeight());
+            dataOutputStream.writeBytes(fileHeader);
+
+            int size = map.bitmap.getWidth() * map.bitmap.getHeight();
+            byte[] pixelsByte = new byte[size];
+            int[] pixelsInt = new int[size];
+            map.bitmap.getPixels(pixelsInt, 0, map.bitmap.getWidth(), 0, 0, map.bitmap.getWidth()
+                    , map.bitmap.getHeight());
+
+            for (int i = 0; i < size; i++) {
+                switch (pixelsInt[i]) {
+                    case Definition.MAPCOLOR.UNDETECT:
+                        pixelsInt[i] = 0xff969696;
+                        break;
+                    case Definition.MAPCOLOR.BLOCK:
+                        pixelsInt[i] = 0xff000000;
+                        break;
+                    case Definition.MAPCOLOR.PASS:
+                        pixelsInt[i] = 0xffffffff;
+                        break;
+                    case Definition.MAPCOLOR.OBSTACLE:
+                        pixelsInt[i] = 0xff050505;
+                        break;
+                    default:
+                        break;
+                }
+                pixelsByte[i] = (byte) (pixelsInt[i] & 0x000000ff);
+            }
+            dataOutputStream.write(pixelsByte);
+            dataOutputStream.write(map.extra);
+            dataOutputStream.flush();
+            byte[] bytes = outputStream.toByteArray();
+            Log.d(TAG, "saveRoverMapToPFDData: Done!");
+            return bytes;
+        } catch (FileNotFoundException e) {
+            Log.d(TAG, "saveRoverMapToPFDData:FileNotFoundException " + e.getMessage());
+            e.printStackTrace();
+        } catch (IOException e) {
+            Log.d(TAG, "saveRoverMapToPFDData:IOException: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            IOUtils.close(dataOutputStream);
+            IOUtils.close(outputStream);
+        }
+        return null;
     }
 }
 
