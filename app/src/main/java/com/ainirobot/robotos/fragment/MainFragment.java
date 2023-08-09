@@ -33,6 +33,7 @@ public class MainFragment extends BaseFragment {
     private Button mCharge_scene;
     private Button mLocation_scene;
     private Button mNavigation_scene;
+    private Button mAudio_scene;
     private Button mExit;
 
     @Override
@@ -52,6 +53,7 @@ public class MainFragment extends BaseFragment {
         mCharge_scene = (Button) root.findViewById(R.id.charge_scene);
         mLocation_scene = (Button) root.findViewById(R.id.location_scene);
         mNavigation_scene = (Button) root.findViewById(R.id.navigation_scene);
+        mAudio_scene = (Button) root.findViewById(R.id.audio_scene);
         mExit = (Button) root.findViewById(R.id.exit);
         mExit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +108,13 @@ public class MainFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 switchFragment(ChargeFragment.newInstance());
+            }
+        });
+
+        mAudio_scene.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchFragment(AudioFragment.newInstance());
             }
         });
     }

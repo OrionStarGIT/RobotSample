@@ -6,6 +6,7 @@
     <string name="basic_sport">Basic Motion</string>
     <string name="visual_ability">Visual ability</string>
     <string name="speech_ability">Speech ability</string>
+    <string name="audio_ability">audio ability</string>
     <string name="exit">Exit</string>
 
     <string name="start_lead_text">Start navigation</string>
@@ -31,6 +32,7 @@
     <string name="sport_turn_up">Up</string>
     <string name="sport_turn_down">Down</string>
     <string name="sport_stop">Stop</string>
+    <string name="sport_start">start</string>
     <string name="sport_head">Head</string>
     <string name="sport_body">Body</string>
 

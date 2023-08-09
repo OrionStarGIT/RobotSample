@@ -80,6 +80,15 @@
             android:background="@color/colorPrimary"
             android:text="@string/speech_ability"
             android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/audio_scene"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/audio_ability"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
         <Button
