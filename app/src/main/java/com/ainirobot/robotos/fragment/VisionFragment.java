@@ -132,14 +132,14 @@ public class VisionFragment extends BaseFragment {
                                         try {
                                             JSONObject json = new JSONObject(message);
                                             JSONObject info = json.getJSONObject("data").getJSONObject("people");
-                                            if(StringUtil.isNullOrEmpty(info.getString("user_id"))){
-                                                LogTools.info("Person Unregister | gender:"+info.getString("gender"));
+                                            if(StringUtil.isNullOrEmpty(info.optString("user_id"))){
+                                                LogTools.info("Person Unregister | gender:"+info.optString("gender"));
                                                 if(action == REGISTER){
                                                     registerPerson(person);
                                                 }
                                             }
                                             else{
-                                                LogTools.info("Person Found:"+info.getString("name")+"|gender:"+info.getString("gender"));
+                                                LogTools.info("Person Found:"+info.optString("name")+"|gender:"+info.optString("gender"));
                                             }
                                         } catch (JSONException | NullPointerException e) {
                                             e.printStackTrace();
