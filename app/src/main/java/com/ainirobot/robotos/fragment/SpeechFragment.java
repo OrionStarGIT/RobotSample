@@ -67,11 +67,13 @@ public class SpeechFragment extends BaseFragment {
                 if (TextUtils.isEmpty(text)) {
                     text = mEt_play_text.getHint().toString();
                 }
+
                 mEt_play_text.clearFocus();
                 hideKeyboard();
                 playText(text);
             }
         });
+
 
         mEt_play_text.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override

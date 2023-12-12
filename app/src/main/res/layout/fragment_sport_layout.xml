@@ -7,7 +7,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sport_body"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +41,6 @@
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
             android:text="@string/sport_turn_left" />
-
         <Button
             android:id="@+id/turn_right"
             style="@style/TextStyle"
@@ -52,7 +50,6 @@
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
             android:text="@string/sport_turn_right" />
-
         <Button
             android:id="@+id/stop_move"
             style="@style/TextStyle"
@@ -75,7 +72,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
-
         <Button
             android:id="@+id/head_up"
             style="@style/TextStyle"
@@ -85,7 +81,6 @@
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
             android:text="@string/sport_turn_up" />
-
         <Button
             android:id="@+id/head_down"
             style="@style/TextStyle"
@@ -95,7 +90,6 @@
             android:layout_weight="1"
             android:background="@drawable/button_rounded"
             android:text="@string/sport_turn_down" />
-
         <Button
             android:id="@+id/head_left"
             style="@style/TextStyle"

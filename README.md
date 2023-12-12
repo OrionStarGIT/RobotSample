@@ -1,10 +1,14 @@
 # RobotSample
+<<<<<<< HEAD
 
 ## [中文（Chinese）](#chinese)
 
 ## [English](#english)
 
 ## 1. 目录结构
+=======
+## 1.目录结构
+>>>>>>> 5b6829f8ab2a5516e1481ddbe2b10b0f8079ebec
 
 ├─app 业务代码  
 │  ├─robotos  
@@ -29,6 +33,7 @@
 │  │  ├─ MainActivity.java App主页面入口  
 │  ├─ res 资源目录  
 │  ├─AndroidManifest.xml App的清单文件  
+<<<<<<< HEAD
 
 ## 2. 环境配置
 
@@ -105,3 +110,12 @@ Robot application development requires the Android development environment and I
 ### 2.1 Android Development Environment
 
 The robot system is based on customized development on Android, so when developing robot applications, we need to configure the Android development environment. For specific Android development environment configuration, please refer to: [Android Developer Documentation](https://developer.android.com/).
+=======
+│
+
+## 2. 环境配置
+机器人应用的开发需要依赖Android开发环境,IDE工具，详细配置请参考以下文档。
+Android开发环境
+### 2.1 Android开发环境
+机器人系统是基于Android定制开发，所以我们在开发机器人应用的时候需要配置Android开发环境，具体Android开发环境配置，请参考 : https://developer.android.com/ 。
+>>>>>>> 5b6829f8ab2a5516e1481ddbe2b10b0f8079ebec

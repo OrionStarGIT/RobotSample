@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.os.Handler;
 
+
 import com.ainirobot.coreservice.client.RobotApi;
 import com.ainirobot.robotos.fragment.FailedFragment;
 import com.ainirobot.robotos.fragment.MainFragment;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }, 1200); // 延迟执行checkInit()
 
         //setContentView(R.layout.activity_main);
+
     }
 
     private void initViews() {
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     // 继续显示Splash界面
+
                     checkInit();
                 }
             },300);

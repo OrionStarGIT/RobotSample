@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Robot App Sample</string>
     <string name="sdk_info">SDK Sample</string>
     <string name="basic_scene">Basic scene</string>

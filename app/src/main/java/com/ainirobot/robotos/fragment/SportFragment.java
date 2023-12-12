@@ -22,13 +22,13 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
+
 import android.app.Dialog;
 import android.os.Handler;
 import android.widget.TextView;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.MotionEvent;
-import android.view.View;
 
 
 import com.ainirobot.coreservice.client.RobotApi;
@@ -52,6 +52,7 @@ public class SportFragment extends BaseFragment {
     private Button mHead_right;
 
     private static int reqId = 0;
+
     private Dialog movingDialog;
     private Handler autoStopHandler = new Handler();
 
@@ -118,7 +119,7 @@ public class SportFragment extends BaseFragment {
         mGo_forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RobotApi.getInstance().goForward(0, 0.6f, mMotionListener);
+                RobotApi.getInstance().goForward(0, 0.4f, mMotionListener);
                 showMovingDialog(); // 显示全屏对话框
             }
         });

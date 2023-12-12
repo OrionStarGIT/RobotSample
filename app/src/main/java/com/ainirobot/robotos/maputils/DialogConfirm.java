@@ -68,7 +68,7 @@ public class DialogConfirm extends AlertDialog {
         tv_cancle_creat_map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               dismiss();
+                dismiss();
                 try {
                     cancelBtnCallBack.cancelClick();
                 } catch (Exception e) {

@@ -13,7 +13,6 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical">
-
         <Button
             android:id="@+id/sport_scene"
             android:layout_width="120dp"
@@ -74,6 +73,7 @@
             android:text="@string/lead_text"
             android:textColor="#FFFFFF"
             android:visibility="gone" />
+
 
         <Button
             android:id="@+id/speech_scene"
