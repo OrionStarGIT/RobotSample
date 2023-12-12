@@ -1,6 +1,6 @@
 # RobotSample
 
-## [Scroll to view instructions in English]
+## Scroll to view instructions in English
 
 ## 1. 目录结构
 
@@ -28,7 +28,7 @@
 │  │  ├─ MainActivity.java App主页面入口  
 │  ├─ res 资源目录  
 │  ├─AndroidManifest.xml App的清单文件  
-<<<<<<< HEAD
+
 
 ## 2. 环境配置
 
