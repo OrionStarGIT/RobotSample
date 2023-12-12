@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorExit">#f00</color>
+    <color name="alpha_70">#B30C1235</color>
+    <color name="dialog_reset_left">#FF99A3A8</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dialog_divide_line">#E1E7EA</color>
+    <color name="black">#000000</color>
+    <color name="upgrade_press">#EFF1F2</color>
+    <color name="blue">#FF55C3FB</color>
+    <color name="ota_network_radio_stoke">#CCD2D6</color>
+    <color name="ota_upgrade_no_complete">#FF713C</color>
+</resources>

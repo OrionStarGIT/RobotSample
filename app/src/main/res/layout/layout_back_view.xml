@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="match_parent"
+    android:padding="2dp" >
+
+    <Button
+        android:id="@+id/back_btn"
+        style="@style/TextStyle"
+        android:drawablePadding="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="#32CD32"
+        android:text="@string/back_text"
+        android:textColor="#FFFAFA"
+        android:drawableStart="@drawable/ic_back_arrow"
+        android:drawableLeft="@drawable/ic_back_arrow"
+        android:gravity="start|center_vertical" />
+
+</RelativeLayout>

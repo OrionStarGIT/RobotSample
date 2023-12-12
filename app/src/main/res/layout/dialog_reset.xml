@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="940px"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_round_rect_white_create_map">
+
+    <ImageView
+        android:id="@+id/close_dialog"
+        android:layout_width="90px"
+        android:layout_height="90px"
+        android:layout_marginLeft="845px"
+        android:layout_marginRight="5px"
+        android:src="@drawable/delete_black_btn"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/content1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80px"
+        android:gravity="center"
+        android:textColor="#555D61"
+        android:textSize="46px"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/content2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="30px"
+        android:layout_marginRight="50px"
+        android:gravity="center"
+        android:text="@string/forbid_line_explain"
+        android:textColor="#555D61"
+        android:textSize="46px"
+        app:layout_constraintTop_toBottomOf="@id/content1"
+        app:layout_goneMarginTop="166px"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginTop="80px"
+        android:background="#E1E7EA"
+        app:layout_constraintTop_toBottomOf="@id/content2" />
+
+
+    <TextView
+        android:id="@+id/tv_cancle_creat_map"
+        android:layout_width="0dp"
+        android:layout_height="140px"
+        android:layout_weight="1"
+        android:background="@drawable/bg_textview_click_left"
+        android:gravity="center"
+        android:textColor="@color/dialog_reset_left"
+        android:textSize="40px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_reset"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="80px"
+        android:layout_marginTop="30px"
+        android:background="#FFE1E7EA"
+        app:layout_constraintLeft_toRightOf="@id/tv_cancle_creat_map"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <TextView
+        android:id="@+id/tv_reset"
+        android:layout_width="0sp"
+        android:layout_height="140px"
+        android:layout_weight="1"
+        android:background="@drawable/bg_textview_click_right"
+        android:gravity="center"
+        android:textColor="#FF55C3FB"
+        android:textSize="40px"
+        app:layout_constraintLeft_toRightOf="@id/tv_cancle_creat_map"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

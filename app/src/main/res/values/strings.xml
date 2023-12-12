@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Robot App Sample</string>
+    <string name="sdk_info">SDK Sample</string>
+    <string name="basic_scene">Basic scene</string>
+    <string name="navigation">Navigation</string>
+    <string name="basic_sport">Basic Motion</string>
+    <string name="visual_ability">Visual ability</string>
+    <string name="speech_ability">Speech ability</string>
+    <string name="audio_ability">audio ability</string>
+    <string name="exit">Exit</string>
+
+    <string name="start_lead_text">Start navigation</string>
+    <string name="stop_lead_text">End navigation</string>
+    <string name="lead_text">Lead</string>
+    <string name="map_location_text">Map/Position</string>
+    <string name="charge_text">Charge</string>
+    <string name="lead_hint_point">Reception point</string>
+    <string name="lead_tips_text">Notice:Before Lead,Make sure the location exist</string>
+    <string name="back_text">Back</string>
+    <string name="clear_screen">Clear</string>
+    <string name="recovery_screen">RCVY</string>
+    <string name="output_result">Result:</string>
+    <string name="speech_hint_text">Play text/Query text</string>
+
+    <string name="speech_play">Play</string>
+    <string name="speech_stop">Stop</string>
+    <string name="speech_query">Query</string>
+    <string name="sport_forward">Forward</string>
+    <string name="sport_back">Back</string>
+    <string name="sport_turn_left">Left</string>
+    <string name="sport_turn_right">Right</string>
+    <string name="sport_turn_up">Up</string>
+    <string name="sport_turn_down">Down</string>
+    <string name="sport_stop">Stop</string>
+    <string name="sport_start">start</string>
+    <string name="sport_head">Head</string>
+    <string name="sport_body">Body</string>
+
+    <string name="vision_register">Register</string>
+    <string name="vision_find">Find Face</string>
+    <string name="vision_un_register">Unregister</string>
+    <string name="vision_warning">Warning:Due to legal restrictions, the registration API is not developed in regions other than China. You may need Google or MS related services to implement the face registration function </string>
+    <string name="vision_warning2">No api to delete person at the moment</string>
+    <string name="charge_desc">If you want to \"Leaving Charge Dock\", you have to \"disable auto-charge\" before robot start charge</string>
+    <string name="connect_failed">Your sdk init failed<br/><br/> Make sure launch this app from Home Launcher!<br/><br/> 你的SDK初始化失败了<br/>请确保从应用中心启动此程序。</string>
+
+    <string name="location_reception">Is in reception point?</string>
+    <string name="location_init_point">Init Position</string>
+    <string name="location_is_estimate">Is estimate</string>
+    <string name="location_set_reception">Set reception point</string>
+    <string name="location_get_point">Get Point</string>
+    <string name="location_remove_point">Del Point</string>
+    <string name="getname">getname</string>
+
+    <string name="navigation_stop">Stop</string>
+    <string name="navigation_resume_direction">Resume Direction</string>
+
+
+    <string name="charge_disable">Disable Auto-Charge</string>
+    <string name="charge_enable">Enable Auto-Charge</string>
+    <string name="charge_auto_start">Go Charge</string>
+    <string name="charge_auto_stop">Stop go charge</string>
+    <string name="charge_stop_leave">Leaving Charge Dock</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="positioning_spot">Positioning Point</string>
+    <string name="charging_point">Charging Point</string>
+    <string name="charging_pole">Charging Pole</string>
+    <string name="get_place_fail">R.string.get_place_fail</string>
+    <string name="stand_by_spot">Stand-by Point</string>
+    <string name="reception_point">Reception Point</string>
+    <string name="do_not_move_robot">Please don\'t move the robot</string>
+    <string name="starting_progress">Creating Map, Please Wait…</string>
+    <string name="go_navigation">Go Navigation?</string>
+    <string name="sure_go_navigation">Are you sure to navigation %s?</string>
+    <string name="cancel_txt">Cancel</string>
+    <string name="confirm_txt">Confirm</string>
+    <string name="forbid_line_explain">\"No-go line has been added\" or \"No need to add\". Please tap \"Save\".</string>
+
+
+
+
+</resources>

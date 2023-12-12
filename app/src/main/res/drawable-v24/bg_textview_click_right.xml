@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item android:drawable="@color/dialog_divide_line" android:state_pressed="true" />-->
+    <!--<item android:drawable="@android:color/white"  />-->
+
+
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <corners android:bottomRightRadius="30px" />
+            <solid android:color="@color/white"/>
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:bottomRightRadius="30px" />
+            <solid android:color="@color/dialog_divide_line"/>
+        </shape>
+    </item>
+</selector>
+
+

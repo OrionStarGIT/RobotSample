@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 特殊点位配置，不同机器特殊点位可能不同，本地支持支持的多语言类型是相同的  -->
+
+    <!-- 特殊点支持的语言类型全集，大于等于本地支持的系统语言  -->
+    <string-array name="special_place_lang">
+        <item>zh_CN</item>
+        <item>zh_GD</item>
+        <item>zh_TW</item>
+        <item>en_US</item>
+        <item>ko_KR</item>
+        <item>ja_JP</item>
+		<item>th_TH</item>
+		<item>de_DE</item>
+		<item>es_ES</item>
+        <item>en_GB</item>
+        <item>da_DK</item>
+        <item>sv_SE</item>
+        <item>fi_FI</item>
+        <item>nb_NO</item>
+        <item>fr_FR</item>
+        <item>nl_NL</item>
+        <item>ru_RU</item>
+        <item>pl_PL</item>
+        <item>pt_PT</item>
+        <item>it_IT</item>
+        <item>ro_RO</item>
+        <item>ms_MY</item>
+        <item>vi_VN</item>
+        <item>id_ID</item>
+        <item>fil_PH</item>
+        <item>tr_TR</item>
+        <item>in_ID</item>
+        <item>ar_SA</item>
+        <item>sv_SE</item>
+        <item>fi_FI</item>
+        <item>nb_NO</item>
+        <item>ro_RO</item>
+        <item>vi_VN</item>
+        <item>fil_PH</item>
+    </string-array>
+
+    <!-- Default  -->
+    <string-array name="SpecialPlace_zh_CN">
+        <item>充电桩</item>
+        <item>接待点</item>
+        <item>回充点</item>
+    </string-array>
+    <string-array name="SpecialPlace_en_US">
+        <item>Charging Pole</item>
+        <item>Reception Point</item>
+        <item>Charging Point</item>
+    </string-array>
+    <string-array name="SpecialPlace_ko_KR">
+        <item>충전대</item>
+        <item>안내 대기 장소</item>
+        <item>충전 장소</item>
+    </string-array>
+    <string-array name="SpecialPlace_ja_JP">
+        <item>充電台</item>
+        <item>応接地点</item>
+        <item>充電地点</item>
+    </string-array>
+    <string-array name="SpecialPlace_zh_GD">
+        <item>充電樁</item>
+        <item>接待點</item>
+        <item>回充點</item>
+    </string-array>
+    <string-array name="SpecialPlace_th_TH">
+        <item>แท่นชาร์จ</item>
+        <item>จุดรับ</item>
+        <item>จุดชาร์จ</item>
+    </string-array>
+    <string-array name="SpecialPlace_de_DE">
+        <item>Ladestapel</item>
+        <item>Empfangsstelle</item>
+        <item>Aufladepunkt</item>
+    </string-array>
+    <string-array name="SpecialPlace_es_ES">
+        <item>Pila de carga</item>
+        <item>Punto de recepción</item>
+        <item>Punto de recarga</item>
+    </string-array>
+    <string-array name="SpecialPlace_en_GB">
+        <item>Charging Pole</item>
+        <item>Reception Point</item>
+        <item>Charging Point</item>
+    </string-array>
+    <string-array name="SpecialPlace_da_DK">
+        <item>Opladningsbunke</item>
+        <item>Modtagelsespunkt</item>
+        <item>Genopladningspunkt</item>
+    </string-array>
+    <string-array name="SpecialPlace_sv_SE">
+        <item>Laddningshög</item>
+        <item>Mottagningspunkt</item>
+        <item>Ladda punkt</item>
+    </string-array>
+    <string-array name="SpecialPlace_fi_FI">
+        <item>Latauspino</item>
+        <item>Vastaanottopiste</item>
+        <item>Latauspiste</item>
+    </string-array>
+    <string-array name="SpecialPlace_nb_NO">
+        <item>Ladebunke</item>
+        <item>Mottakspunkt</item>
+        <item>Ladepunkt</item>
+    </string-array>
+    <string-array name="SpecialPlace_fr_FR">
+        <item>Pile de chargement</item>
+        <item>Point d\'accueil</item>
+        <item>Point de recharge</item>
+    </string-array>
+    <string-array name="SpecialPlace_nl_NL">
+        <item>Oplaadstapel</item>
+        <item>Ontvangstpunt</item>
+        <item>Oplaadpunt</item>
+    </string-array>
+    <string-array name="SpecialPlace_ru_RU">
+        <item>Зарядная куча</item>
+        <item>Пункт приема</item>
+        <item>Точка пополнения</item>
+    </string-array>
+    <string-array name="SpecialPlace_pl_PL">
+        <item>Stos ładowania</item>
+        <item>Punkt odbioru</item>
+        <item>Punkt ładowania</item>
+    </string-array>
+    <string-array name="SpecialPlace_pt_PT">
+        <item>Pilha de carregamento</item>
+        <item>Ponto de recepção</item>
+        <item>Ponto de recarga</item>
+    </string-array>
+    <string-array name="SpecialPlace_it_IT">
+        <item>Pila di ricarica</item>
+        <item>Punto di accoglienza</item>
+        <item>Punto di ricarica</item>
+    </string-array>
+    <string-array name="SpecialPlace_ro_RO">
+        <item>Grămadă de încărcare</item>
+        <item>Punct de recepție</item>
+        <item>Punct de reîncărcare</item>
+    </string-array>
+    <string-array name="SpecialPlace_ms_MY">
+        <item>Cerucuk pengecasan</item>
+        <item>Tempat penerimaan</item>
+        <item>Titik Isi Ulang</item>
+    </string-array>
+    <string-array name="SpecialPlace_vi_VN">
+        <item>Cọc sạc</item>
+        <item>Điểm tiếp nhận</item>
+        <item>Điểm nạp tiền</item>
+    </string-array>
+    <string-array name="SpecialPlace_id_ID">
+        <item>Tumpukan pengisian daya</item>
+        <item>Titik penerimaan</item>
+        <item>Titik Isi Ulang</item>
+    </string-array>
+    <string-array name="SpecialPlace_fil_PH">
+        <item>Nagcha-charge na tumpok</item>
+        <item>Tanggap ng pagtanggap</item>
+        <item>Recharge Point</item>
+    </string-array>
+
+    <!-- MiniTob  -->
+    <string-array name="MiniTob_SpecialPlace_zh_CN">
+        <item>充电桩</item>
+        <item>接待点</item>
+        <item>回充点</item>
+        <item>定位点</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_en_US">
+        <item>Charging Pole</item>
+        <item>Reception Point</item>
+        <item>Charging Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_ko_KR">
+        <item>충전대</item>
+        <item>안내 대기 장소</item>
+        <item>충전 장소</item>
+        <item>포지션닝 포인트</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_ja_JP">
+        <item>充電台</item>
+        <item>応接地点</item>
+        <item>充電地点</item>
+        <item>測位地点</item>
+    </string-array>
+	<string-array name="MiniTob_SpecialPlace_zh_GD">
+        <item>充電樁</item>
+        <item>接待點</item>
+        <item>回充點</item>
+        <item>定位點</item>
+    </string-array>
+	<string-array name="MiniTob_SpecialPlace_th_TH">
+        <item>แท่นชาร์จ</item>
+        <item>จุดรับ</item>
+        <item>จุดชาร์จ</item>
+        <item>จุดวางตำแหน่ง</item>
+    </string-array>
+	<string-array name="MiniTob_SpecialPlace_de_DE">
+        <item>Ladestapel</item>
+        <item>Empfangsstelle</item>
+        <item>Aufladepunkt</item>
+        <item>Ankerpunkt</item>
+    </string-array>
+	<string-array name="MiniTob_SpecialPlace_es_ES">
+        <item>Pila de carga</item>
+        <item>Punto de recepción</item>
+        <item>Punto de recarga</item>
+        <item>Punto de anclaje</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_en_GB">
+        <item>Charging Pole</item>
+        <item>Reception Point</item>
+        <item>Charging Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_da_DK">
+        <item>Opladningsbunke</item>
+        <item>Modtagelsespunkt</item>
+        <item>Genopladningspunkt</item>
+        <item>Ankerpunkt</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_sv_SE">
+        <item>Laddningshög</item>
+        <item>Mottagningspunkt</item>
+        <item>Ladda punkt</item>
+        <item>Ankarpunkt</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_fi_FI">
+        <item>Latauspino</item>
+        <item>Vastaanottopiste</item>
+        <item>Latauspiste</item>
+        <item>Ankkuripiste</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_nb_NO">
+        <item>Ladebunke</item>
+        <item>Mottakspunkt</item>
+        <item>Ladepunkt</item>
+        <item>Ankerpunkt</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_fr_FR">
+        <item>Pile de chargement</item>
+        <item>Point d\'accueil</item>
+        <item>Point de recharge</item>
+        <item>Point d\'ancrage</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_nl_NL">
+        <item>Oplaadstapel</item>
+        <item>Ontvangstpunt</item>
+        <item>Oplaadpunt</item>
+        <item>Ankerpunt</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_ru_RU">
+        <item>Зарядная куча</item>
+        <item>Пункт приема</item>
+        <item>Точка пополнения</item>
+        <item>Точка привязки</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_pl_PL">
+        <item>Stos ładowania</item>
+        <item>Punkt odbioru</item>
+        <item>Punkt ładowania</item>
+        <item>Punkt zakotwiczenia</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_pt_PT">
+        <item>Pilha de carregamento</item>
+        <item>Ponto de recepção</item>
+        <item>Ponto de recarga</item>
+        <item>Ponto de ancoragem</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_it_IT">
+        <item>Pila di ricarica</item>
+        <item>Punto di accoglienza</item>
+        <item>Punto di ricarica</item>
+        <item>Punto di ancoraggio</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_ro_RO">
+        <item>Grămadă de încărcare</item>
+        <item>Punct de recepție</item>
+        <item>Punct de reîncărcare</item>
+        <item>Punct de ancorare</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_ms_MY">
+        <item>Cerucuk pengecasan</item>
+        <item>Tempat penerimaan</item>
+        <item>Titik Isi Ulang</item>
+        <item>Titik jangkar</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_vi_VN">
+        <item>Cọc sạc</item>
+        <item>Điểm tiếp nhận</item>
+        <item>Điểm nạp tiền</item>
+        <item>Điểm neo</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_id_ID">
+        <item>Tumpukan pengisian daya</item>
+        <item>Titik penerimaan</item>
+        <item>Titik Isi Ulang</item>
+        <item>Titik jangkar</item>
+    </string-array>
+    <string-array name="MiniTob_SpecialPlace_fil_PH">
+        <item>Nagcha-charge na tumpok</item>
+        <item>Tanggap ng pagtanggap</item>
+        <item>Recharge Point</item>
+        <item>Anchor point</item>
+    </string-array>
+
+    <!-- Saiph  -->
+    <string-array name="Saiph_SpecialPlace_zh_TW">
+        <item>待機點</item>
+        <item>定位點</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_zh_GD">
+        <item>待機點</item>
+        <item>定位點</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_zh_CN">
+        <item>待机点</item>
+        <item>定位点</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_en_US">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_ko_KR">
+        <item>대기 장소</item>
+        <item>포지션닝 포인트</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_ja_JP">
+        <item>待機地点</item>
+        <item>測位地点</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_th_TH">
+        <item>จุดสแตนด์บาย</item>
+        <item>โพสิชั้นนิ่ง</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_de_DE">
+        <item>Standby-Punkt</item>
+        <item>Positionierungspunkt</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_ru_RU">
+        <item>Резервная точка</item>
+        <item>Точка расположения</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_tr_TR">
+        <item>Bekleme Noktası</item>
+        <item>Konumlandırma Noktası</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_es_ES">
+        <item>Punto de espera</item>
+        <item>Punto de posición</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_en_GB">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_pt_PT">
+        <item>Ponto em espera</item>
+        <item>Ponto de Posicionamento</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_fr_FR">
+        <item>Point de veille</item>
+        <item>Point de Positionnement</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_it_IT">
+        <item>Punto Di Stand-by</item>
+        <item>Punto Di Posizione</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_nl_NL">
+        <item>Stand-by punt</item>
+        <item>Positioneer punt</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_ar_SA">
+        <item>نقطة احتياطية</item>
+        <item>نقطة تحديد الموقع</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_pl_PL">
+        <item>Punkt czuwania</item>
+        <item>Punkt pozycjonowania</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_id_ID">
+        <item>Titik Siaga</item>
+        <item>Titik Pemosisian</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_in_ID">
+        <item>Titik Siaga</item>
+        <item>Titik Pemosisian</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_da_DK">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_ms_MY">
+        <item>Titik Berdiri</item>
+        <item>Titik Kedudukan</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_sv_SE">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_fi_FI">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_nb_NO">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_ro_RO">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_vi_VN">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+    <string-array name="Saiph_SpecialPlace_fil_PH">
+        <item>Stand-by Point</item>
+        <item>Positioning Point</item>
+    </string-array>
+
+</resources>
