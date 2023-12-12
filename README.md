@@ -33,6 +33,7 @@
 ## 2. 环境配置
 
 机器人应用的开发需要依赖Android开发环境、IDE工具。详细配置请参考以下文档。
+若要直接编译本示例代码运行，需要JDK1.8（Java 8），请手动从机器人屏幕点击启动本App而不是从IDE上的debug按钮，以免无法获得api权限。
 
 ### 2.1 Android开发环境
 
@@ -72,6 +73,7 @@
 ## 2. Environment Configuration
 
 Robot application development requires the Android development environment and IDE tools. For detailed configuration, please refer to the following documents.
+To compile and run this sample code directly, you will need JDK 1.8 (Java 8). Please manually click on the app launch from the robot's screen instead of using the debug button in the IDE to ensure that you obtain the necessary API permissions.
 
 ### 2.1 Android Development Environment
 
