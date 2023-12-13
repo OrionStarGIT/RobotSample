@@ -35,7 +35,7 @@ public class MainFragment extends BaseFragment {
     private Button mNavigation_scene;
     private Button mAudio_scene;
     private Button mExit;
-
+    private Button mXBack;
     @Override
     public View onCreateView(Context context) {
         View root = mInflater.inflate(R.layout.fragment_main_layout,null,false);
@@ -55,6 +55,17 @@ public class MainFragment extends BaseFragment {
         mNavigation_scene = (Button) root.findViewById(R.id.navigation_scene);
         mAudio_scene = (Button) root.findViewById(R.id.audio_scene);
         mExit = (Button) root.findViewById(R.id.exit);
+        mXBack = (Button) root.findViewById(R.id.xback);
+
+        mXBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (getActivity() != null) {
+                    getActivity().onBackPressed();
+                }
+            }
+        });
+
         mExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

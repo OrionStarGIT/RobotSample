@@ -47,6 +47,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 检查是否通过 URL scheme 打开应用
+        Intent intent = getIntent();
+        if (intent != null && intent.getData() != null && intent.getData().getScheme().equals("jerry")) {
+            String scheme = intent.getData().getScheme();
+            String host = intent.getData().getHost();
+            String path = intent.getData().getPath();
+
+            if (host != null && host.equals("main")) {
+                // 打开与用户在Launcher上手动点击图标打开的页面相同的效果
+                setContentView(R.layout.activity_main);
+                initViews();
+                mInstance = MainActivity.this;
+                return;
+            }
+        }
+
+        // 默认的启动逻辑
         setContentView(R.layout.splash_layout);
         TextView textSplash = findViewById(R.id.text_splash);
 
@@ -59,10 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 mInstance = MainActivity.this;
             }
         }, 1200); // 延迟执行checkInit()
-
-        //setContentView(R.layout.activity_main);
-
     }
+
 
     private void initViews() {
         mContent = findViewById(R.id.container_content);

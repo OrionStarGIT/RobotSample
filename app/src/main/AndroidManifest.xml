@@ -30,8 +30,10 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="action.orionstar.default.app" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="jerry" />
             </intent-filter>
         </activity>
     </application>
