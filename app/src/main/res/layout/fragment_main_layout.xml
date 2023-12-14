@@ -96,16 +96,7 @@
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/xback"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|top"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/alpha_70"
-        android:text="Back"
-        android:textColor="#FFFFFF" />
+
 
     <Button
         android:id="@+id/exit"

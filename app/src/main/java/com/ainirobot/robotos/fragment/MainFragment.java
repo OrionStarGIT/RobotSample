@@ -55,21 +55,16 @@ public class MainFragment extends BaseFragment {
         mNavigation_scene = (Button) root.findViewById(R.id.navigation_scene);
         mAudio_scene = (Button) root.findViewById(R.id.audio_scene);
         mExit = (Button) root.findViewById(R.id.exit);
-        mXBack = (Button) root.findViewById(R.id.xback);
 
-        mXBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (getActivity() != null) {
-                    getActivity().onBackPressed();
-                }
-            }
-        });
+
 
         mExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.exit(0);
+                if (getActivity() != null) {
+                    getActivity().onBackPressed();
+                    getActivity().finish();
+                }
             }
         });
         mLead_scene.setOnClickListener(new View.OnClickListener() {
