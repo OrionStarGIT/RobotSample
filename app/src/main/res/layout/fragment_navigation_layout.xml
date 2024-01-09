@@ -12,9 +12,9 @@
         <EditText
             android:id="@+id/et_navigation_point"
             android:layout_width="180dp"
-            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
-            android:hint="@string/lead_hint_point" />
+            android:layout_marginLeft="10dp"
+            android:hint="会议间" />
 
         <Button
             android:id="@+id/start_navigation"
@@ -46,6 +46,47 @@
             android:layout_height="42dp"
             android:layout_marginLeft="8dp"
             android:text="@string/navigation_resume_direction" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/check_pass_gate"
+            style="@style/TextStyle"
+            android:layout_width="100dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="8dp"
+            android:text="目标点位是否经过闸机" />
+
+        <TextView
+            android:id="@+id/check_pass_gate_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="正在检查中，请稍后..."
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/start_pose_name"
+            style="@style/TextStyle"
+            android:layout_width="100dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="8dp"
+            android:text="闸机入口名字"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/end_pose_name"
+            style="@style/TextStyle"
+            android:layout_width="100dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:text="闸机出口名字"
+            android:visibility="invisible" />
     </LinearLayout>
 
 </LinearLayout>

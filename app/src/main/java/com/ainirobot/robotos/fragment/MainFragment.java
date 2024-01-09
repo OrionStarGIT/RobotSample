@@ -105,8 +105,8 @@ public class MainFragment extends BaseFragment {
         mNavigation_scene.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                switchFragment(NavigationFragment.newInstance());
-                switchFragment(NavFragment.newInstance());
+            switchFragment(NavigationFragment.newInstance());
+//                switchFragment(NavFragment.newInstance());
             }
         });
 
