@@ -20,8 +20,8 @@
 │  │  │     ├─ NavigationFragment.java 导航业务模块  
 │  │  │     ├─ SpeechFragment.java 语音业务模块  
 │  │  │     ├─ SportFragment.java 基础运动业务模块  
-│  │  │     ├─ VisionFragment.java 视觉业务模块
-│  │  │     ├─ ElectricDoorControlFragment.java 电动门业务模块
+│  │  │     ├─ VisionFragment.java 视觉业务模块  
+│  │  │     ├─ ElectricDoorControlFragment.java 电动门业务模块  
 │  │  ├─ view 公共组件  
 │  │  │     ├─ BackView.java 返回控件  
 │  │  │     ├─ ResultView.java 结果显示控件  
@@ -63,7 +63,7 @@
 │  │  │     ├─ SpeechFragment.java Voice business module  
 │  │  │     ├─ SportFragment.java Basic sports business module  
 │  │  │     ├─ VisionFragment.java Vision business module  
-│  │  │     ├─ ElectricDoorControlFragment.java Electric door service module
+│  │  │     ├─ ElectricDoorControlFragment.java Electric door service module  
 │  │  ├─ view Common components  
 │  │  │     ├─ BackView.java Back control  
 │  │  │     ├─ ResultView.java Result display control  
