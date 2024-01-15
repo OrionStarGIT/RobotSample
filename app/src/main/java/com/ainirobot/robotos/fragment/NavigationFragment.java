@@ -20,6 +20,7 @@ import android.content.Context;
 import android.os.RemoteException;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -165,7 +166,7 @@ public class NavigationFragment extends BaseFragment {
                 LogTools.info("getGatePassingRoute result: " + result + " message: " + message + "extra：" + extraData);
                 getPoint();
                 try {
-                    if (result == 1 && message != null && message.length() > 0) {
+                    if (result == 1 && !TextUtils.isEmpty(message)) {
                         Gson gson = new Gson();
                         Type listType = new TypeToken<List<Pose>>() {
                         }.getType();
@@ -187,17 +188,30 @@ public class NavigationFragment extends BaseFragment {
                                     end_pose_name.setEnabled(false);
                                 }
                             });
+                        }else {
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    check_pass_gate_status.setText("点位小于两个，不需要经过闸机");
+                                }
+                            });
                         }
                     } else {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                check_pass_gate_status.setText("点位小于两个，不需要经过闸机");
+                                check_pass_gate_status.setText("获取失败，请重试");
                             }
                         });
                     }
                 } catch (Exception e) {
-
+                    LogTools.info("onError result: " + e.getMessage());
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            check_pass_gate_status.setText("获取失败，请重试");
+                        }
+                    });
                 }
             }
 
