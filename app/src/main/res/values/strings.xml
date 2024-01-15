@@ -8,6 +8,7 @@
     <string name="visual_ability">Visual ability</string>
     <string name="speech_ability">Speech ability</string>
     <string name="audio_ability">audio ability</string>
+    <string name="electric_door_control">electric door control</string>
     <string name="exit">Exit</string>
 
     <string name="start_lead_text">Start navigation</string>
@@ -78,7 +79,12 @@
     <string name="confirm_txt">Confirm</string>
     <string name="forbid_line_explain">\"No-go line has been added\" or \"No need to add\". Please tap \"Save\".</string>
 
-
-
+    <string name="open_first_door">Open first door</string>
+    <string name="close_first_door">Close first door</string>
+    <string name="open_second_door">Open second door</string>
+    <string name="close_second_door">Close second door</string>
+    <string name="open_all_door">Open all door</string>
+    <string name="close_all_door">Close all door</string>
+    <string name="get_door_status">Get the door status</string>
 
 </resources>
