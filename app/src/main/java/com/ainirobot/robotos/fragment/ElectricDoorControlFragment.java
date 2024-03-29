@@ -26,6 +26,7 @@ import androidx.fragment.app.Fragment;
 import com.ainirobot.coreservice.bean.CanElectricDoorBean;
 import com.ainirobot.coreservice.client.Definition;
 import com.ainirobot.coreservice.client.RobotApi;
+import com.ainirobot.coreservice.client.StatusListener;
 import com.ainirobot.coreservice.client.listener.CommandListener;
 import com.ainirobot.robotos.R;
 import com.ainirobot.robotos.maputils.GsonUtil;
@@ -37,8 +38,29 @@ public class ElectricDoorControlFragment extends BaseFragment {
     public View onCreateView(Context context) {
         View root = mInflater.inflate(R.layout.fragment_electric_door_control_layout, null, false);
         bindViews(root);
+        //注册电动门状态监听，获取电动门状态，根据自己业务在需要地方注册
+        //当电动门状态发生变化时，会回调onStatusUpdate方法，例如调用开门、关门指令后，电动门状态会发生变化
+        //如果需要在任意时机获取电动门状态，可以调用getElectricDoorStatus方法
+        RobotApi.getInstance().registerStatusListener(Definition.STATUS_CAN_ELECTRIC_DOOR_CTRL, statusListener);
         return root;
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        //取消注册电动门状态监听
+        RobotApi.getInstance().unregisterStatusListener(statusListener);
+    }
+
+    private StatusListener statusListener = new StatusListener() {
+        @Override
+        public void onStatusUpdate(String type, String data) {
+            if (TextUtils.equals(type, Definition.STATUS_CAN_ELECTRIC_DOOR_CTRL)) {
+                Log.d(TAG, "electric door status update data:" + data);
+                handlerElectricResult(data);
+            }
+        }
+    };
 
     private void bindViews(View root) {
         initCmdView(root, R.id.open_first_door, Definition.CAN_DOOR_DOOR1_DOOR2_OPEN);
@@ -62,6 +84,10 @@ public class ElectricDoorControlFragment extends BaseFragment {
         root.findViewById(viewId).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /**
+                 * 电动门控制
+                 * 业务调用前，需要先获取电动门状态，判断门是否在运动中，如果在运动中，不要执行以下开关门指令
+                 */
                 RobotApi.getInstance().setElectricDoorCtrl(0, doorCmd, new CommandListener() {
                     @Override
                     public void onResult(int result, String message, String extraData) {
@@ -85,25 +111,55 @@ public class ElectricDoorControlFragment extends BaseFragment {
                 super.onResult(result, message, extraData);
                 Log.d(TAG, "getElectricDoorStatus result:" + result + " message:" + message);
                 if (result == 1 && !TextUtils.isEmpty(message)) {
-                    CanElectricDoorBean doorBean = GsonUtil.fromJson(message, CanElectricDoorBean.class);
-                    //两种方式可以判断门的开关状态，door1和 door2是上面的两扇仓门，door3和door4是下面的两扇仓门
-                    Log.d(TAG, "door1 status: " + (doorBean.getDoor1() == Definition.CAN_DOOR_STATUS_OPEN ? "open" : "close"));
-                    Log.d(TAG, "door2 status: " + (doorBean.getDoor2() == Definition.CAN_DOOR_STATUS_OPEN ? "open" : "close"));
-                    Log.d(TAG, "door3 status: " + (doorBean.getDoor3() == Definition.CAN_DOOR_STATUS_OPEN ? "open" : "close"));
-                    Log.d(TAG, "door4 status: " + (doorBean.getDoor4() == Definition.CAN_DOOR_STATUS_OPEN ? "open" : "close"));
-//                    Log.d(TAG, "door1 status: " + (doorBean.getDoor2() == Definition.CAN_DOOR_STATUS_CLOSE ? "close" : "open"));
-//                    Log.d(TAG, "door2 status: " + (doorBean.getDoor2() == Definition.CAN_DOOR_STATUS_CLOSE ? "close" : "open"));
-//                    Log.d(TAG, "door3 status: " + (doorBean.getDoor3() == Definition.CAN_DOOR_STATUS_CLOSE ? "close" : "open"));
-//                    Log.d(TAG, "door4 status: " + (doorBean.getDoor4() == Definition.CAN_DOOR_STATUS_CLOSE ? "close" : "open"));
-
-                    //门的夹手状态
-                    Log.d(TAG, "doorUp status is " + (doorBean.getUpStatus() == Definition.CAN_DOOR_STATUS_BLOCK_AND_BOUNCE ? "block and bounce" : "normal"));
-                    Log.d(TAG, "doorDown status is " + (doorBean.getDownStatus() == Definition.CAN_DOOR_STATUS_BLOCK_AND_BOUNCE ? "block and bounce" : "normal"));
+                    handlerElectricResult(message);
                 } else {
                     Log.d(TAG, "getElectricDoorStatus onResult: Failure to get status");
                 }
             }
         });
+    }
+
+    private void handlerElectricResult(String message) {
+        CanElectricDoorBean doorBean = GsonUtil.fromJson(message, CanElectricDoorBean.class);
+        //door1和 door2是上面的两扇仓门，door3和door4是下面的两扇仓门
+        //上仓门的状态
+        if (doorBean.getDoor1() == Definition.CAN_DOOR_STATUS_RUNNING || doorBean.getDoor2() == Definition.CAN_DOOR_STATUS_RUNNING) {
+            Log.d(TAG, "upper door is running");
+            //当仓门正在运动时，不要执行开关门指令
+        }
+        if (doorBean.getDoor1() == Definition.CAN_DOOR_STATUS_OPEN && doorBean.getDoor2() == Definition.CAN_DOOR_STATUS_OPEN) {
+            Log.d(TAG, "upper door is open");
+        }
+        if (doorBean.getDoor1() == Definition.CAN_DOOR_STATUS_CLOSE && doorBean.getDoor2() == Definition.CAN_DOOR_STATUS_CLOSE) {
+            Log.d(TAG, "upper door is close");
+        }
+        //下仓门的状态
+        if (doorBean.getDoor3() == Definition.CAN_DOOR_STATUS_RUNNING || doorBean.getDoor4() == Definition.CAN_DOOR_STATUS_RUNNING) {
+            Log.d(TAG, "lower door is running");
+            //当仓门正在运动时，不要执行开关门指令
+        }
+        if (doorBean.getDoor3() == Definition.CAN_DOOR_STATUS_OPEN && doorBean.getDoor4() == Definition.CAN_DOOR_STATUS_OPEN) {
+            Log.d(TAG, "lower door is open");
+        }
+        if (doorBean.getDoor3() == Definition.CAN_DOOR_STATUS_CLOSE && doorBean.getDoor4() == Definition.CAN_DOOR_STATUS_CLOSE) {
+            Log.d(TAG, "lower door is close");
+        }
+
+        //门的堵转状态，开门、关门时可能会出现堵转
+        //关门时，被堵
+        if (doorBean.getUpStatus() == Definition.CAN_DOOR_STATUS_BLOCK_AND_BOUNCE) {
+            Log.d(TAG, "upper door is block and bounce");
+        }
+        if (doorBean.getDownStatus() == Definition.CAN_DOOR_STATUS_BLOCK_AND_BOUNCE) {
+            Log.d(TAG, "lower door is block and bounce");
+        }
+        //开门时，被堵
+        if (doorBean.getUpStatus() == Definition.CAN_DOOR_STATUS_BLOCKING_STOP) {
+            Log.d(TAG, "upper door is blocking stop");
+        }
+        if (doorBean.getDownStatus() == Definition.CAN_DOOR_STATUS_BLOCKING_STOP) {
+            Log.d(TAG, "lower door is blocking stop");
+        }
     }
 
     public static Fragment newInstance() {
