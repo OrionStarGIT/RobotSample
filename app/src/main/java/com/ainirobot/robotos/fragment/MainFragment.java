@@ -61,6 +61,12 @@ public class MainFragment extends BaseFragment {
                 switchFragment(ElectricDoorControlFragment.newInstance());
             }
         });
+        root.findViewById(R.id.body_follow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchFragment(BodyFollowFragment.newInstance());
+            }
+        });
         mExit = (Button) root.findViewById(R.id.exit);
 
 
