@@ -58,7 +58,7 @@ public class MainFragment extends BaseFragment {
         root.findViewById(R.id.electric_door_control).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchFragment(ElectricDoorControlFragment.newInstance());
+                switchFragment(ElectricDoorActionControlFragment.newInstance());
             }
         });
         root.findViewById(R.id.body_follow).setOnClickListener(new View.OnClickListener() {
