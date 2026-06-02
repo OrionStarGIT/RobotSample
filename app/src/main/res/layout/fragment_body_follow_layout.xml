@@ -8,12 +8,12 @@
         android:id="@+id/start_body_follow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="开始人体跟随" />
+        android:text="@string/start_body_follow" />
 
     <Button
         android:id="@+id/stop_body_follow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="停止人体跟随" />
+        android:text="@string/stop_body_following" />
 
 </LinearLayout>

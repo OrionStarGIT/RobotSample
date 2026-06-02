@@ -32,7 +32,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:background="@drawable/button_rounded_ripple"
-                android:text="← 返回"
+                android:text="@string/arm_control_back"
                 android:textColor="#FFFFFF"
                 android:textSize="10sp" />
 
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="机械臂控制"
+                android:text="@string/arm_control_title"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </RelativeLayout>
@@ -64,7 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="角度: "
+                android:text="@string/arm_control_angle"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
 
@@ -83,7 +83,7 @@
                 android:id="@+id/btn_reset_angle"
                 android:layout_width="60dp"
                 android:layout_height="32dp"
-                android:text="重置"
+                android:text="Reset"
                 android:textSize="11sp"
                 android:background="@drawable/button_rounded_ripple"/>
         </LinearLayout>
@@ -132,7 +132,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="状态: "
+            android:text="@string/arm_control_state_title"
             android:textSize="12sp"
             android:textStyle="bold"/>
 
@@ -141,7 +141,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="就绪"
+            android:text="@string/arm_control_state_ready"
             android:textSize="12sp"
             android:textColor="#FF6200EE"
             android:maxLines="2"
@@ -159,7 +159,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="速度: "
+            android:text="@string/arm_control_speed"
             android:textSize="14sp"/>
 
         <EditText
@@ -184,7 +184,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="相对移动（根据滑块角度）"
+        android:text="@string/arm_control_relative_movement"
         android:textSize="14sp"
         android:textStyle="bold"
         android:paddingTop="8dp"
@@ -206,7 +206,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="左臂"/>
+            android:text="@string/arm_control_left_arm"/>
 
         <Button
             android:id="@+id/btn_right_rel_move"
@@ -218,7 +218,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="右臂"/>
+            android:text="@string/arm_control_right_arm"/>
 
         <Button
             android:id="@+id/btn_dual_rel_move"
@@ -229,14 +229,14 @@
             android:layout_marginStart="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="同时移动"/>
+            android:text="@string/arm_control_both_arms"/>
     </LinearLayout>
 
     <!-- 绝对位置控制区域 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="绝对位置（移动到指定角度）"
+        android:text="@string/arm_control_absolute_position"
         android:textSize="14sp"
         android:textStyle="bold"
         android:paddingTop="8dp"
@@ -258,7 +258,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="左臂"/>
+            android:text="@string/arm_control_left_arm"/>
 
         <Button
             android:id="@+id/btn_right_abs_move"
@@ -270,7 +270,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="右臂"/>
+            android:text="@string/arm_control_right_arm"/>
 
         <Button
             android:id="@+id/btn_dual_abs_move"
@@ -282,7 +282,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="同时移动"/>
+            android:text="@string/arm_control_both_arms"/>
 
         <Button
             android:id="@+id/btn_dual_abs_reset"
@@ -293,14 +293,14 @@
             android:layout_marginStart="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="重置到-30"/>
+            android:text="@string/arm_control_reset_to_30"/>
     </LinearLayout>
 
     <!-- 重置控制区域 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="重置到默认位置（垂直）"
+        android:text="@string/arm_control_reset_to_default_position"
         android:textSize="14sp"
         android:textStyle="bold"
         android:paddingTop="8dp"
@@ -322,7 +322,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="重置左臂"/>
+            android:text="@string/arm_control_reset_left_arm"/>
 
         <Button
             android:id="@+id/btn_right_reset"
@@ -334,7 +334,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="重置右臂"/>
+            android:text="@string/arm_control_reset_right_arm"/>
 
         <Button
             android:id="@+id/btn_both_reset"
@@ -345,14 +345,14 @@
             android:layout_marginStart="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="重置双臂"/>
+            android:text="@string/arm_control_reset_both_arms"/>
     </LinearLayout>
 
     <!-- 查询控制区域 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="查询位置"
+        android:text="@string/arm_control_query_location"
         android:textSize="14sp"
         android:textStyle="bold"
         android:paddingTop="8dp"
@@ -374,7 +374,7 @@
             android:layout_marginEnd="4dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="查询左臂"/>
+            android:text="@string/arm_control_query_left_arm"/>
 
         <Button
             android:id="@+id/btn_query_right"
@@ -385,14 +385,14 @@
             android:layout_marginStart="4dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="查询右臂"/>
+            android:text="@string/arm_control_query_right_arm"/>
     </LinearLayout>
 
     <!-- 实时监控控制区域 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="实时监控"
+        android:text="@string/arm_control_realtime_monitoring"
         android:textSize="14sp"
         android:textStyle="bold"
         android:paddingTop="8dp"
@@ -414,7 +414,7 @@
             android:layout_marginEnd="4dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="开始监控"/>
+            android:text="@string/arm_control_start_monitoring"/>
 
         <Button
             android:id="@+id/btn_stop_monitor"
@@ -425,14 +425,14 @@
             android:layout_marginStart="4dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="停止监控"/>
+            android:text="@string/arm_control_stop_monitoring"/>
     </LinearLayout>
 
     <!-- 停止控制区域 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="紧急停止"
+        android:text="@string/arm_control_emergency_stop"
         android:textSize="14sp"
         android:textStyle="bold"
         android:paddingTop="8dp"
@@ -454,7 +454,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="停左臂"/>
+            android:text="@string/arm_control_stop_left_arm"/>
 
         <Button
             android:id="@+id/btn_stop_right"
@@ -466,7 +466,7 @@
             android:layout_marginEnd="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="停右臂"/>
+            android:text="@string/arm_control_stop_right_arm"/>
 
         <Button
             android:id="@+id/btn_stop_dual"
@@ -477,7 +477,7 @@
             android:layout_marginStart="2dp"
             android:textSize="10sp"
             android:background="@drawable/button_rounded_ripple"
-            android:text="全部停止"/>
+            android:text="@string/arm_control_stop_both_arms"/>
     </LinearLayout>
 
     </LinearLayout>

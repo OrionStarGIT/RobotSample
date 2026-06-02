@@ -14,7 +14,7 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:hint="会议间" />
+            android:hint="@string/navigation_navigation_point" />
 
         <Button
             android:id="@+id/start_navigation"
@@ -60,13 +60,13 @@
             android:layout_width="100dp"
             android:layout_height="42dp"
             android:layout_marginLeft="8dp"
-            android:text="目标点位是否经过闸机" />
+            android:text="@string/navigation_query_pass_gate_status" />
 
         <TextView
             android:id="@+id/check_pass_gate_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="正在检查中，请稍后..."
+            android:text="@string/navigation_please_wait"
             android:visibility="invisible" />
 
         <Button
@@ -75,7 +75,7 @@
             android:layout_width="100dp"
             android:layout_height="42dp"
             android:layout_marginLeft="8dp"
-            android:text="闸机入口名字"
+            android:text="@string/navigation_gate_entrance_name"
             android:visibility="invisible" />
 
         <Button
@@ -85,7 +85,7 @@
             android:layout_height="42dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="10dp"
-            android:text="闸机出口名字"
+            android:text="@string/navigation_gate_exit_name"
             android:visibility="invisible" />
     </LinearLayout>
 
